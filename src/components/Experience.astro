@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Junio 2023 − Diciembre 2023",
+    title: "Software Engineer − Alarcón Management Group S.A.C",
+    description:
+      "Contribución al desarrollo del ERP corporativo con Laravel, Vue.js y MySQL bajo metodología Scrum. Optimización de código, aplicación de buenas prácticas y fomento de mejoras continuas en el proceso de desarrollo.",
+    link: "https://www.linkedin.com/in/paulo-ugarte/",
+  },
+  {
+    date: "Marzo 2023 − Mayo 2023",
+    title: "Frontend Developer  − Geor Aplicación S.A.C",
+    description:
+      "Maquetación y prototipado en Figma. Contribución al desarrollo frontend con Ionic, Angular. Implementación de buenas prácticas. Trabajo en equipo bajo Scrum. Documentación en Jira.",
+  },
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
