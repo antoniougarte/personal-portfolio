@@ -3,6 +3,9 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import AstroIcon from "./icons/AstroIcon.vue"
 import VueIcon from "./icons/VueIcon.vue"
+import HtmlIcon from "./icons/HtmlIcon.vue"
+import CssIcon from "./icons/CssIcon.vue"
+import SassIcon from "./icons/SassIcon.vue"
 
 const TAGS = {
   ASTRO: {
@@ -20,6 +23,21 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  HTML: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: HtmlIcon,
+  },
+  CSS: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: CssIcon,
+  },
+  SASS: {
+    name: "Sass",
+    class: "bg-[#003159] text-white",
+    icon: SassIcon,
+  },
 }
 const PROJECTS = [
   {
@@ -31,12 +49,21 @@ const PROJECTS = [
     image: "/projects/captura-portfolio.webp",
     tags: [TAGS.ASTRO, TAGS.VUEJS, TAGS.TAILWIND],
   },
+  {
+    title: "Landing Page POWER SPORTS",
+    description:
+      "Landing Page POWER SPORTS para demostrar sólidos conocimientos en HTML, CSS Y SASS",
+    link: "https://antoniougarte.github.io/sports-landing/",
+    github: "https://github.com/antoniougarte/sports-landing",
+    image: "/projects/sport-landing-captura.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.SASS],
+  },
 ]
 ---
 
 {
   PROJECTS.map(({ image, title, description, tags }) => (
-    <article>
+    <article class="mb-24">
       <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
       <ul class="flex gap-x-2 flex-row mb-2">

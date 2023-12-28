@@ -23,6 +23,7 @@
 import {reactive} from 'vue'
 import HtmlIcon from './icons/HtmlIcon.vue'
 import CssIcon from './icons/CssIcon.vue'
+import SassIcon from './icons/SassIcon.vue'
 import BootstrapIcon from './icons/BootstrapIcon.vue'
 import TailwindIcon from './icons/TailwindIcon.vue'
 import JavaScriptIcon from './icons/JavaScriptIcon.vue'
@@ -40,6 +41,7 @@ export default {
   components: {
     HtmlIcon,
     CssIcon,
+    SassIcon,
     BootstrapIcon,
     TailwindIcon,
     JavaScriptIcon,
@@ -63,6 +65,10 @@ export default {
       'CSS':{
         'name': 'CSS',
         'icon': CssIcon,
+      },
+      'SASS':{
+        'name': 'SASS',
+        'icon': SassIcon,
       },
       'Bootstrap':{
         'name': 'Bootstrap',
