@@ -6,6 +6,7 @@ import VueIcon from "./icons/VueIcon.vue"
 import HtmlIcon from "./icons/HtmlIcon.vue"
 import CssIcon from "./icons/CssIcon.vue"
 import SassIcon from "./icons/SassIcon.vue"
+import ImageProject from "./ImageProject.astro"
 
 const TAGS = {
   ASTRO: {
@@ -44,8 +45,8 @@ const PROJECTS = [
     title: "Portfolio de Paulo Antonio",
     description:
       "Portfolio de Paulo Antonio, desarrollado con Astro, Vue y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
+    link: "https://paulo-antonio.netlify.app/",
+    github: "https://github.com/antoniougarte/personal-portfolio",
     image: "/projects/captura-portfolio.webp",
     tags: [TAGS.ASTRO, TAGS.VUEJS, TAGS.TAILWIND],
   },
@@ -59,10 +60,11 @@ const PROJECTS = [
     tags: [TAGS.HTML, TAGS.CSS, TAGS.SASS],
   },
 ]
+
 ---
 
 {
-  PROJECTS.map(({ image, title, description, tags }) => (
+  PROJECTS.map(({ image, title, description, tags, link, github }) => (
     <article class="mb-24">
       <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
       <p class="text-lg mb-4 text-pretty text-gray-200">{description}</p>
@@ -78,12 +80,26 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
-      <img
-        loading="lazy"
-        class="rounded shadow-2xl shadow-white/10 "
-        src={image}
-        alt={`Captura de pantalla del proyecto ${image}`}
-      />
+      <ImageProject imgProject={image} linkProject={link} githubProject={github}/>
     </article>
   ))
 }
+
+<style>
+  .img-perso:hover{
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttonElement = document.getElementById("button");
+    if (buttonElement) {
+      buttonElement.addEventListener("click", handleClick);
+    }
+    
+    function handleClick() {
+      console.log("¡botón pulsado!");
+    }
+  });
+</script>

@@ -1,0 +1,53 @@
+---
+interface Props {
+  imgProject?: string;
+  linkProject?: string;
+  githubProject?: string;
+}
+
+const { imgProject, linkProject = "Not found", githubProject = "Not found"} = Astro.props;
+---
+
+<div class="div-imagen">
+  <div class="w-full h-full text-center flex flex-col justify-center justify-items-center">
+      <div>
+        Proyecto desplegado: {linkProject}
+      </div>
+      <div>
+        Repositorio del proyecto: {githubProject}
+      </div>
+  </div>
+  <a href={githubProject} target="_blank" rel="noopener noreferrer" class="w-full h-full text-center flex flex-col justify-center justify-items-center">
+    <img
+      loading="lazy"
+      class="desvanecer rounded shadow-2xl shadow-white/10 img-perso"
+      src={imgProject}
+      alt={`Captura de pantalla del proyecto ${imgProject}`}
+    />
+  </a>
+</div>
+
+<style>
+  .div-imagen {
+  display:inline-block;
+  position:relative;
+}
+
+.div-imagen > div {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:-1;
+  padding:10px;
+  margin:0;
+}
+
+.desvanecer:hover {
+  opacity: 0.07;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  -ms-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+</style>
